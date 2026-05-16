@@ -9,6 +9,11 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
+app.get('/', (req, res) => {
+  res.send('🚀 Pragya API is running...');
+});
+
+
 process.on('uncaughtException', (err) => {
   console.error('UNCAUGHT EXCEPTION:', err);
 });

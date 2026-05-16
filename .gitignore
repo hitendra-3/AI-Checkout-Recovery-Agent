@@ -8,5 +8,4 @@ __pycache__/
 .idea/
 bun.lock
 bun.lockb
-package-lock.json
 *.mp4
