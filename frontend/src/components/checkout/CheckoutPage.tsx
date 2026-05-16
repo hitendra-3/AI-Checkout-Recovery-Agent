@@ -109,7 +109,7 @@ export const CheckoutPage = () => {
       if (score >= 2) {
         setLastInterventionTime(Date.now());
         try {
-          const response = await fetch("http://localhost:3001/api/recover", {
+          const response = await fetch("https://ai-checkout-recovery-agent.onrender.com/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -160,7 +160,7 @@ export const CheckoutPage = () => {
     setIsAiTyping(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/recover", {
+      const response = await fetch("https://ai-checkout-recovery-agent.onrender.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
