@@ -109,7 +109,8 @@ export const CheckoutPage = () => {
       if (score >= 2) {
         setLastInterventionTime(Date.now());
         try {
-          const response = await fetch("https://ai-checkout-recovery-agent.onrender.com/", {
+          const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
+          const response = await fetch(`${apiUrl}/api/recover`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -159,8 +160,9 @@ export const CheckoutPage = () => {
     setChatMessages(prev => [...prev, userMessage]);
     setIsAiTyping(true);
 
+    const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
     try {
-      const response = await fetch("https://ai-checkout-recovery-agent.onrender.com/", {
+      const response = await fetch(`${apiUrl}/api/recover`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
